@@ -25,46 +25,36 @@ struct SignUpView: View {
                 Form{
                     Text("Sign up")
                         .font(.headline)
-                    TextField(text: $username, prompt: Text("Username")) {
-                        
-                    }
                     
-                    TextField(text: $firstName, prompt: Text("First name")) {
-                        
-                    }
+                    TextField("Username", text: $username)
                     
-                    TextField(text: $surName, prompt: Text("Surname")) {
-                        
-                    }
+                    TextField("First name", text: $firstName)
+                   
+                    TextField("Surname", text: $surName)
                     
-                    TextField(text: $email, prompt: Text("Email")) {
-                        
-                    }
+                    TextField("email", text: $email)
                     
                     Picker("Please choose one", selection: $selectedOwnerOrBorrower) {
                         ForEach(ownerOrBorrower, id: \.self) {
                             Text($0)
-                        }
+                        }.navigationBarBackButtonHidden(true)
                     }
                     
-                    SecureField(text: $password, prompt: Text("Password")) {
-                        
-                    }
+                    SecureField("Password", text: $password)
                     
-                    SecureField(text: $password, prompt: Text("Confirm password")) {
-                        
-                    }
-                    
+                    SecureField("Confirm Password", text: $password)
+
                     NavigationLink(destination: TestView()){
-                        Text("Confirm")
-                            .font(.headline)
+                        Button(action: {print("sldkjf")}) {
+                            Text("Confirm")
+                        }
                     }
                     
                 }
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
             }
-        }.navigationBarBackButtonHidden(true)
+        }//.navigationBarBackButtonHidden(true)
     }
 }
 

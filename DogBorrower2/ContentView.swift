@@ -23,19 +23,15 @@ struct ContentView: View {
                     .scaledToFit()
                 
                 Form{
-                    TextField(text: $username, prompt: Text("Username")) {
-                        
-                    }
+                    TextField("Username", text: $username)
                     
-                    SecureField(text: $password, prompt: Text("Password")) {
-                        
-                    }
+                    SecureField("Password", text: $password)
                     
                     NavigationLink(destination: SignUpView()){
                         Text("Sign up")
                             .font(.headline)
                     }
-
+                    
                     NavigationLink(destination: TestView()){
                         Text("Log in")
                             .font(.headline)
@@ -45,7 +41,7 @@ struct ContentView: View {
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
             }
-        }.navigationBarHidden(true)
+        }//.navigationBarHidden(true)
     }
 }
 
