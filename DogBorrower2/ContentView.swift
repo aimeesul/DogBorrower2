@@ -71,18 +71,6 @@ struct ContentView: View {
                     
                 }
                 .padding()
-                
-//                if authenticationPass {
-//                    Text("Login succeeded!")
-//                        .font(.headline)
-//                        .frame(width: 250, height: 80)
-//                        .background(Color.green)
-//                        .cornerRadius(20.0)
-//                        .foregroundColor(.white)
-//                    
-//                    
-//                    
-//                }
             }
         }
     }
