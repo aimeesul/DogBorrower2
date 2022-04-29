@@ -3,22 +3,17 @@
 //  DogBorrower
 //
 //  Created by Aimee Sullivan on 08/04/2022.
-//
+//https://blckbirds.com/post/how-to-navigate-between-views-in-swiftui-by-using-an-observableobject/
 
 import SwiftUI
-
-let storedUsername = "Myusername"
-let storedPassword = "Mypassword"
 
 struct TestView : View {
     
     @State var username: String = ""
     @State var password: String = ""
     
-    @State var authenticationDidFail: Bool = false
-    @State var authenticationDidSucceed: Bool = false
-    
-    @State var editingMode: Bool = false
+    @State var authenticationFail: Bool = false
+    @State var authenticationPass: Bool = false
     
     var body: some View {
         
@@ -28,29 +23,45 @@ struct TestView : View {
                     .resizable()
                     .padding(.all)
                     .scaledToFit()
-                TextField("Username", text: $username)
-                SecureField("Password", text: $password)
-                if authenticationDidFail {
+                
+                TextField("Username", text: $username).textInputAutocapitalization(.never).disableAutocorrection(true)
+                
+                SecureField("Password", text: $password).textInputAutocapitalization(.never).disableAutocorrection(true)
+                
+                if authenticationFail {
                     Text("Information not correct. Try again.")
                         .offset(y: -10)
                         .foregroundColor(.red)
                 }
-                Button(action: {
-                    for user in users {
-                        if self.username == user.userName && self.password == user.password {
-                            self.authenticationDidSucceed = true
-                            self.authenticationDidFail = false
-                            
-                        } else {
-                            self.authenticationDidFail = true
+                
+                NavigationLink(destination: SignUpView(), isActive: $authenticationPass){
+                    Button(action: {
+                        for user in users {
+                            if self.username == user.userName && self.password == user.password {
+                                self.authenticationPass = true
+                                self.authenticationFail = false
+                                
+                            } else {
+                                self.authenticationFail = true
+                            }
                         }
+                    }) {
+                        Text("LOGIN")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 220, height: 60)
+                            .background(Color.green)
+                            .cornerRadius(15.0)
                     }
-                }) {
-                    LoginButtonContent()
                 }
-                }
-                .padding()
-            if authenticationDidSucceed {
+                
+                
+            
+            }
+            .padding()
+            
+            if authenticationPass {
                 Text("Login succeeded!")
                     .font(.headline)
                     .frame(width: 250, height: 80)
@@ -58,28 +69,18 @@ struct TestView : View {
                     .cornerRadius(20.0)
                     .foregroundColor(.white)
                 
+               
+                
             }
         }
-            .offset(y: editingMode ? -150 : 0)
     }
 }
 
-#if DEBUG
+
 struct TestView_Previews : PreviewProvider {
     static var previews: some View {
         TestView()
     }
 }
-#endif
 
-struct LoginButtonContent : View {
-    var body: some View {
-        return Text("LOGIN")
-            .font(.headline)
-            .foregroundColor(.white)
-            .padding()
-            .frame(width: 220, height: 60)
-            .background(Color.green)
-            .cornerRadius(15.0)
-    }
-}
+
