@@ -44,7 +44,7 @@ struct SignUpView: View {
                     
                     SecureField("Confirm Password", text: $password)
 
-                    NavigationLink(destination: TestView()){
+                    NavigationLink(destination: ContentView()){
                         Button(action: {print("sldkjf")}) {
                             Text("Confirm")
                         }

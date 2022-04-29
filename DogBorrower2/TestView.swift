@@ -1,86 +1,20 @@
 //
 //  TestView.swift
-//  DogBorrower
+//  DogBorrower2
 //
-//  Created by Aimee Sullivan on 08/04/2022.
-//https://blckbirds.com/post/how-to-navigate-between-views-in-swiftui-by-using-an-observableobject/
+//  Created by Aimee Sullivan on 29/04/2022.
+//
 
 import SwiftUI
 
-struct TestView : View {
-    
-    @State var username: String = ""
-    @State var password: String = ""
-    
-    @State var authenticationFail: Bool = false
-    @State var authenticationPass: Bool = false
-    
+struct TestView: View {
     var body: some View {
-        
-        ZStack {
-            VStack {
-                Image("logo")
-                    .resizable()
-                    .padding(.all)
-                    .scaledToFit()
-                
-                TextField("Username", text: $username).textInputAutocapitalization(.never).disableAutocorrection(true)
-                
-                SecureField("Password", text: $password).textInputAutocapitalization(.never).disableAutocorrection(true)
-                
-                if authenticationFail {
-                    Text("Information not correct. Try again.")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                }
-                
-                NavigationLink(destination: SignUpView(), isActive: $authenticationPass){
-                    Button(action: {
-                        for user in users {
-                            if self.username == user.userName && self.password == user.password {
-                                self.authenticationPass = true
-                                self.authenticationFail = false
-                                
-                            } else {
-                                self.authenticationFail = true
-                            }
-                        }
-                    }) {
-                        Text("LOGIN")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: 220, height: 60)
-                            .background(Color.green)
-                            .cornerRadius(15.0)
-                    }
-                }
-                
-                
-            
-            }
-            .padding()
-            
-            if authenticationPass {
-                Text("Login succeeded!")
-                    .font(.headline)
-                    .frame(width: 250, height: 80)
-                    .background(Color.green)
-                    .cornerRadius(20.0)
-                    .foregroundColor(.white)
-                
-               
-                
-            }
-        }
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-
-struct TestView_Previews : PreviewProvider {
+struct TestView_Previews: PreviewProvider {
     static var previews: some View {
         TestView()
     }
 }
-
-

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C23C3AC8281C346C0039E3C4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C3AC7281C346C0039E3C4 /* TestView.swift */; };
 		C2ADB77A281813C300CE9B57 /* DogBorrower2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB779281813C300CE9B57 /* DogBorrower2App.swift */; };
 		C2ADB77C281813C300CE9B57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB77B281813C300CE9B57 /* ContentView.swift */; };
 		C2ADB77E281813C600CE9B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2ADB77D281813C600CE9B57 /* Assets.xcassets */; };
@@ -16,7 +17,6 @@
 		C2ADB797281813C600CE9B57 /* DogBorrower2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB796281813C600CE9B57 /* DogBorrower2UITestsLaunchTests.swift */; };
 		C2ADB7A4281814ED00CE9B57 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB7A3281814ED00CE9B57 /* User.swift */; };
 		C2ADB7A62818152700CE9B57 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB7A52818152700CE9B57 /* SignUpView.swift */; };
-		C2ADB7A82818153E00CE9B57 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB7A72818153E00CE9B57 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C23C3AC7281C346C0039E3C4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		C2ADB776281813C300CE9B57 /* DogBorrower2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogBorrower2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2ADB779281813C300CE9B57 /* DogBorrower2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBorrower2App.swift; sourceTree = "<group>"; };
 		C2ADB77B281813C300CE9B57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		C2ADB796281813C600CE9B57 /* DogBorrower2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBorrower2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C2ADB7A3281814ED00CE9B57 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C2ADB7A52818152700CE9B57 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		C2ADB7A72818153E00CE9B57 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				C2ADB779281813C300CE9B57 /* DogBorrower2App.swift */,
-				C2ADB7A72818153E00CE9B57 /* TestView.swift */,
 				C2ADB7A52818152700CE9B57 /* SignUpView.swift */,
 				C2ADB77B281813C300CE9B57 /* ContentView.swift */,
+				C23C3AC7281C346C0039E3C4 /* TestView.swift */,
 				C2ADB7A3281814ED00CE9B57 /* User.swift */,
 				C2ADB77D281813C600CE9B57 /* Assets.xcassets */,
 				C2ADB77F281813C600CE9B57 /* Preview Content */,
@@ -267,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2ADB7A62818152700CE9B57 /* SignUpView.swift in Sources */,
-				C2ADB7A82818153E00CE9B57 /* TestView.swift in Sources */,
+				C23C3AC8281C346C0039E3C4 /* TestView.swift in Sources */,
 				C2ADB77C281813C300CE9B57 /* ContentView.swift in Sources */,
 				C2ADB77A281813C300CE9B57 /* DogBorrower2App.swift in Sources */,
 				C2ADB7A4281814ED00CE9B57 /* User.swift in Sources */,
