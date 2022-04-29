@@ -15,6 +15,7 @@ struct SignUpView: View {
     @State private var email: String = ""
     var ownerOrBorrower = ["Dog Owner", "Dog Borrower"]
     @State private var selectedOwnerOrBorrower = "Dog Owner"
+    @State var pass: Bool = false
     
     var body: some View {
         
@@ -49,19 +50,29 @@ struct SignUpView: View {
                 .disableAutocorrection(true)
                 
                 NavigationLink(destination: TestView()){
-                    Text("CONFIRM")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 220, height: 60)
-                        .background(Color.green)
-                        .cornerRadius(15.0)
+                    Button(action: {
+                        self.pass = true
+                    }) {
+                        Text("CONFIRM")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 220, height: 60)
+                            .background(Color.green)
+                            .cornerRadius(15.0)
+                    }
                 }
             }
         }
-        
+    }
+    
+    if (self.pass==true) {
+        let newUser = User(userName: self.username, password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName)
+        users.append(newUser)
+        print(users)
     }
 }
+
 
 
 struct SignUpView_Previews: PreviewProvider {
