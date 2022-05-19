@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @State private var username: String = ""
     @State private var password: String = ""
     @State private var firstName: String = ""
     @State private var surName: String = ""
@@ -25,8 +24,6 @@ struct SignUpView: View {
                     Text("Sign up")
                         .font(.headline)
                     
-                    TextField("Username", text: $username)
-                    
                     TextField("First name", text: $firstName)
                     
                     TextField("Surname", text: $surName)
@@ -41,17 +38,14 @@ struct SignUpView: View {
                     
                     SecureField("Password", text: $password)
                     
-                    SecureField("Confirm Password", text: $password)
-                    
-                    
-                    
                 }
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
                 
-                NavigationLink(destination: TestView()){
+                NavigationLink(destination: TestView(), isActive: $pass){
                     Button(action: {
                         self.pass = true
+                        someFunc()
                     }) {
                         Text("CONFIRM")
                             .font(.headline)
@@ -65,12 +59,14 @@ struct SignUpView: View {
             }
         }
     }
-    
-    if (self.pass==true) {
-        let newUser = User(userName: self.username, password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName)
-        users.append(newUser)
-        print(users)
+    func someFunc() {
+       // if self.pass {
+            let newUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName)
+            users.append(newUser)
+            print(users)
+       // }
     }
+    
 }
 
 

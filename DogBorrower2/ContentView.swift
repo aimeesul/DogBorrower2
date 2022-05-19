@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var username: String = ""
+    @State var email: String = ""
     @State var password: String = ""
     
     @State var authenticationFail: Bool = false
@@ -24,11 +24,11 @@ struct ContentView: View {
                         .padding(.all)
                         .scaledToFit()
                     
-                    TextField("Username", text: $username).textInputAutocapitalization(.never).disableAutocorrection(true)
+                    TextField("Email", text: $email).textInputAutocapitalization(.never).disableAutocorrection(true)
                     
                     SecureField("Password", text: $password).textInputAutocapitalization(.never).disableAutocorrection(true)
                     
-                    if authenticationFail {
+                    if (authenticationFail && authenticationPass==false) {
                         Text("Information not correct. Try again.")
                             .offset(y: -10)
                             .foregroundColor(.red)
@@ -37,7 +37,7 @@ struct ContentView: View {
                     NavigationLink(destination: TestView(), isActive: $authenticationPass){
                         Button(action: {
                             for user in users {
-                                if self.username == user.userName && self.password == user.password {
+                                if self.email == user.email && self.password == user.password {
                                     self.authenticationPass = true
                                     self.authenticationFail = false
                                     
