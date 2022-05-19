@@ -11,25 +11,27 @@ struct SignUp2View: View {
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var image: Image?
-    @State private var images: [UIImage] = []
-    
+    @State var bio: String = ""
+    @State var pass: Bool = false
     
     var body: some View {
         VStack {
-            HStack{
-                RoundedRectangle(cornerRadius: 25)
-                RoundedRectangle(cornerRadius: 25)
-                RoundedRectangle(cornerRadius: 25)
-                
-                Image("plus")
-                    .onTapGesture {
-                        showingImagePicker = true
-                    }
-            }
+            //            HStack{
+            //                RoundedRectangle(cornerRadius: 25)
+            //                RoundedRectangle(cornerRadius: 25)
+            //                RoundedRectangle(cornerRadius: 25)
+            //
+            //                Image("plus")
+            //                    .onTapGesture {
+            //                        showingImagePicker = true
+            //                    }
+            //            }
             ZStack {
                 
                 RoundedRectangle(cornerRadius: 25)
-                    .fill(.secondary)
+                    .fill(.secondary) .onTapGesture {
+                        showingImagePicker = true
+                    }
                 
                 
                 Text("Tap the plus to select a picture")
@@ -44,8 +46,29 @@ struct SignUp2View: View {
             
             Spacer()
             
+            TextField("Bio", text: $bio)
+            
+            NavigationLink(destination: TestView(), isActive: $pass){
+                Button(action: {
+                    self.pass=true
+                    for user in users {
+                        if userID == user.id.uuidString {
+                            self.user.image=self.image
+                        }
+                    }
+                }) {
+                    Text("LOGIN")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 220, height: 60)
+                        .background(Color.green)
+                        .cornerRadius(15.0)
+                }
+            }
+            
             Button("Save") {
-                // save the picture
+                
                 
             }
         }

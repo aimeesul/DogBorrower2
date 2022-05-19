@@ -15,9 +15,10 @@ struct User: Identifiable {
     let ownerOrBorrower: String
     let firstName: String
     let surName: String
-    let userimages: [UIImage] = []
+    let image: Image?
+    let bio: String
 }
 
 var users = [
-    User(password: "test1", email: "test@test.com", ownerOrBorrower: "Owner", firstName: "test", surName: "test"),
-    User(password: "aimee1", email: "aimee@gmail.com", ownerOrBorrower: "Borrower", firstName: "aimee", surName: "sullivan")]
+    User(password: "test1", email: "test@test.com", ownerOrBorrower: "Owner", firstName: "test", surName: "test", image: Image("logo"), bio:""),
+    User(password: "aimee1", email: "aimee@gmail.com", ownerOrBorrower: "Borrower", firstName: "aimee", surName: "sullivan", image: Image("logo"), bio:"")]
