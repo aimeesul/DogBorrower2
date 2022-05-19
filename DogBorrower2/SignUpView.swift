@@ -60,11 +60,12 @@ struct SignUpView: View {
         }
     }
     func someFunc() {
-       // if self.pass {
-            let newUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName)
-            users.append(newUser)
-            print(users)
-       // }
+        // if self.pass {
+        let newUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName)
+        userID=newUser.id.uuidString
+        users.append(newUser)
+        print(users)
+        // }
     }
     
 }

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+var userID = UUID().uuidString
+
 struct ContentView: View {
     
     @State var email: String = ""
@@ -40,6 +42,7 @@ struct ContentView: View {
                                 if self.email == user.email && self.password == user.password {
                                     self.authenticationPass = true
                                     self.authenticationFail = false
+                                    userID = user.id.uuidString
                                     
                                 } else {
                                     self.authenticationFail = true
