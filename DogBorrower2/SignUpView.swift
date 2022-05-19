@@ -42,7 +42,7 @@ struct SignUpView: View {
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
                 
-                NavigationLink(destination: TestView(), isActive: $pass){
+                NavigationLink(destination: SignUp2View(), isActive: $pass){
                     Button(action: {
                         self.pass = true
                         someFunc()

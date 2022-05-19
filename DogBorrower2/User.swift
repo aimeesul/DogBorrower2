@@ -15,6 +15,7 @@ struct User: Identifiable {
     let ownerOrBorrower: String
     let firstName: String
     let surName: String
+    let userimages: [UIImage] = []
 }
 
 var users = [
