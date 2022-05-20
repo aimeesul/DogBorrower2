@@ -51,13 +51,24 @@ struct SignUp2View: View {
             NavigationLink(destination: TestView(), isActive: $pass){
                 Button(action: {
                     self.pass=true
+                    
+                    var index=0
                     for user in users {
-                        if userID == user.id.uuidString {
-                            self.user.image=self.image
+                        index += 1
+                        if user.email == userEmail {
+                            var user1=user
+                            someFunc(&user1)
+                            if let index = users.firstIndex(where: {$0 == user}) {
+                              users.remove(at: index)
+                            }
+                            users.append(user1)
                         }
                     }
+                    
+                    print(users)
+                    
                 }) {
-                    Text("LOGIN")
+                    Text("CONFIRM")
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding()
@@ -83,6 +94,13 @@ struct SignUp2View: View {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
     }
+    
+    func someFunc(_ user: inout User) {
+        user.image = image ?? Image("logo")
+    }
+    
+    
+
 }
 
 

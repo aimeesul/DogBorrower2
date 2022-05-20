@@ -8,14 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct User: Identifiable {
-    let id = UUID()
+struct User: Equatable {
     let password: String
     let email: String
     let ownerOrBorrower: String
     let firstName: String
     let surName: String
-    let image: Image?
+    var image: Image
     let bio: String
 }
 
