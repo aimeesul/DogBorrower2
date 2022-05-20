@@ -52,9 +52,7 @@ struct SignUp2View: View {
                 Button(action: {
                     self.pass=true
                     
-                    var index=0
                     for user in users {
-                        index += 1
                         if user.email == userEmail {
                             var user1=user
                             someFunc(&user1)
