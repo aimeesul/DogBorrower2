@@ -8,8 +8,55 @@
 import SwiftUI
 
 struct TestView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        @State private var showingImagePicker = false
+//        @State private var inputImage: UIImage?
+//        @State private var image: Image?
+//        @State var bio: String = ""
+//        @State var pass: Bool = false
+        
+        var body: some View {
+            Text("Hello world")
+//            VStack {
+//                ZStack {
+//
+//                    RoundedRectangle(cornerRadius: 25)
+//                        .fill(.secondary).onTapGesture {
+//
+//                            image = users[0].image
+//
+//                        }
+//
+//                    Text("Tap the plus to select a picture")
+//                        .foregroundColor(.white)
+//                        .font(.headline)
+//
+//                    image?
+//                        .resizable()
+//                        .scaledToFit()
+//                }
+//
+//
+//                Spacer()
+//
+//
+//
+//
+//            }
+//            .padding([.horizontal, .bottom])
+//
+//
+//            .sheet(isPresented: $showingImagePicker) {
+//                ImagePicker(image: $inputImage)
+//            }
+//        }
+//
+//
+//        func someFunc(_ user: inout User) {
+//            user.image = image ?? Image("logo")
+//        }
+        
+        
+
     }
 }
 

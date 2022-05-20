@@ -16,16 +16,6 @@ struct SignUp2View: View {
     
     var body: some View {
         VStack {
-            //            HStack{
-            //                RoundedRectangle(cornerRadius: 25)
-            //                RoundedRectangle(cornerRadius: 25)
-            //                RoundedRectangle(cornerRadius: 25)
-            //
-            //                Image("plus")
-            //                    .onTapGesture {
-            //                        showingImagePicker = true
-            //                    }
-            //            }
             ZStack {
                 
                 RoundedRectangle(cornerRadius: 25)
@@ -75,11 +65,6 @@ struct SignUp2View: View {
                         .cornerRadius(15.0)
                 }
             }
-            
-            Button("Save") {
-                
-                
-            }
         }
         .padding([.horizontal, .bottom])
         
@@ -95,6 +80,7 @@ struct SignUp2View: View {
     
     func someFunc(_ user: inout User) {
         user.image = image ?? Image("logo")
+       // user.bio = self.bio
     }
     
     
