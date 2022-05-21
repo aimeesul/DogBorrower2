@@ -11,7 +11,6 @@ struct SignUp2View: View {
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var image: Image?
-    @State var bio: String = ""
     @State var pass: Bool = false
     
     var body: some View {
@@ -36,7 +35,6 @@ struct SignUp2View: View {
             
             Spacer()
             
-            TextField("Bio", text: $bio)
             
             NavigationLink(destination: TestView(), isActive: $pass){
                 Button(action: {
