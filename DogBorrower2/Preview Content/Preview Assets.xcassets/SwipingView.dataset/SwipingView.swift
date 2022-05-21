@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct SwipingView: View {
     var body: some View {
@@ -16,12 +15,12 @@ struct SwipingView: View {
                     currentUser.image .resizable()
                         .padding(.all)
                         .scaledToFit()
-                
-                    Image("no")
-                    Image("yes")
+                    HStack {
+                        Image("no")
+                        Image("yes")
                     }
 
-                
+                }
                 
                 Text(currentUser.firstName).font(.headline)
                 

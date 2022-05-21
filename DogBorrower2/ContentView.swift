@@ -26,7 +26,11 @@ struct ContentView: View {
                         .padding(.all)
                         .scaledToFit()
                     
-                    TextField("Email", text: $email).disableAutocorrection(true)//.textInputAutocapitalization(.never
+                    if #available(iOS 15.0, *) {
+                        TextField("Email", text: $email).disableAutocorrection(true).textInputAutocapitalization(.never)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     
                     SecureField("Password", text: $password).disableAutocorrection(true)//.textInputAutocapitalization(.never
                     

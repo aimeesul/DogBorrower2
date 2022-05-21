@@ -44,7 +44,7 @@
 		8203C63D2836730500CB53E9 /* SignUp2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2View.swift; sourceTree = "<group>"; };
 		8203C63F28367AFF00CB53E9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		82B089742839299600F10865 /* dayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayOfWeek.swift; sourceTree = "<group>"; };
-		82B0897628394B8100F10865 /* SwipingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingView.swift; sourceTree = "<group>"; };
+		82B0897628394B8100F10865 /* SwipingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		C23C3AC7281C346C0039E3C4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		C2ADB776281813C300CE9B57 /* DogBorrower2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogBorrower2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2ADB779281813C300CE9B57 /* DogBorrower2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBorrower2App.swift; sourceTree = "<group>"; };
