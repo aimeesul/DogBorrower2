@@ -11,25 +11,56 @@ struct SignUp2View: View {
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var image: Image?
-    @State var pass: Bool = false
+    @State private var pass: Bool = false
+    @State private var bio = ""
+    @State private var daysOfWeek = [dayOfWeek(name:"Monday"),dayOfWeek(name: "Tuesday"),dayOfWeek(name: "Wednesday"),dayOfWeek(name: "Thursday"),dayOfWeek(name: "Friday"),dayOfWeek(name: "Saturday"),dayOfWeek(name: "Sunday")]
     
     var body: some View {
         VStack {
-            ZStack {
+            Form{
+                ZStack {
+                    
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(.secondary) .onTapGesture {
+                            showingImagePicker = true
+                        }
+                    
+                    
+                    Text("Tap to select a picture")
+                        .foregroundColor(.white)
+                        .font(.headline)
+                    
+                    image?
+                        .resizable()
+                        .scaledToFit()
+                }
+                TextField("Bio", text: $bio)
                 
-                RoundedRectangle(cornerRadius: 25)
-                    .fill(.secondary) .onTapGesture {
-                        showingImagePicker = true
+                Spacer()
+                
+                Text("Which days are you available?:")
+                List{
+                    ForEach(0..<daysOfWeek.count){ index in
+                        HStack {
+                            Button(action: {
+                                daysOfWeek[index].isSelected = daysOfWeek[index].isSelected ? false : true
+                            }) {
+                                HStack{
+                                    if daysOfWeek[index].isSelected {
+                                        Image(systemName: "checkmark.circle.fill")
+                                            .foregroundColor(.green)
+                                            .animation(.easeIn)
+                                    } else {
+                                        Image(systemName: "circle")
+                                            .foregroundColor(.primary)
+                                            .animation(.easeOut)
+                                    }
+                                    Text(daysOfWeek[index].name)
+                                }
+                            }.buttonStyle(BorderlessButtonStyle())
+                        }
                     }
-                
-                
-                Text("Tap the plus to select a picture")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                
-                image?
-                    .resizable()
-                    .scaledToFit()
+                }
             }
             
             
@@ -45,7 +76,7 @@ struct SignUp2View: View {
                             var user1=user
                             someFunc(&user1)
                             if let index = users.firstIndex(where: {$0 == user}) {
-                              users.remove(at: index)
+                                users.remove(at: index)
                             }
                             users.append(user1)
                         }
@@ -78,11 +109,21 @@ struct SignUp2View: View {
     
     func someFunc(_ user: inout User) {
         user.image = image ?? Image("logo")
-       // user.bio = self.bio
+        user.bio = self.bio
+        
+        var avalibilty = [dayOfWeek]()
+        for day in daysOfWeek{
+            if day.isSelected {
+                avalibilty.append(day)
+            }
+        }
+        
+        user.availability = avalibilty
+        // user.bio = self.bio
     }
     
     
-
+    
 }
 
 

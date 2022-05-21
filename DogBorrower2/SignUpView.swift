@@ -12,11 +12,10 @@ struct SignUpView: View {
     @State private var firstName: String = ""
     @State private var surName: String = ""
     @State private var email: String = ""
-    var ownerOrBorrower = ["Dog Owner", "Dog Borrower"]
+    @State private var ownerOrBorrower = ["Dog Owner", "Dog Borrower"]
     @State private var selectedOwnerOrBorrower = "Dog Owner"
     @State private var bio: String = ""
-    @State var pass: Bool = false
-    
+    @State private var pass: Bool = false
     
     var body: some View {
         
@@ -40,7 +39,6 @@ struct SignUpView: View {
                     
                     SecureField("Password", text: $password)
                     
-                    TextField("Bio", text: $bio)
                 }
                 
                 NavigationLink(destination: SignUp2View(), isActive: $pass){
@@ -56,12 +54,12 @@ struct SignUpView: View {
                             .background(Color.green)
                             .cornerRadius(15.0)
                     }
+                    
+                }
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
                 
-            }
-            .textInputAutocapitalization(.never)
-            .disableAutocorrection(true)
-            
-            
+                
             }
             
         }
@@ -70,7 +68,7 @@ struct SignUpView: View {
     
     func someFunc() {
         // if self.pass {
-        let newUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName, image: Image("logo"), bio: self.bio)
+        let newUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName, image: Image("logo"), bio:"")
         userEmail = newUser.email
         users.append(newUser)
         print(users)
@@ -86,3 +84,5 @@ struct SignUpView_Previews: PreviewProvider {
         SignUpView()
     }
 }
+
+
