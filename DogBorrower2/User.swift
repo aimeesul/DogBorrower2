@@ -19,5 +19,5 @@ struct User {
     var availability: [dayOfWeek]?
 }
 
-var users = [User(password: "test", email: "test@test.com", ownerOrBorrower: "Owner", firstName: "test", surName: "test", image: Image("0"), bio:"", availability:[dayOfWeek(name: "Monday", isSelected: true)]),
+var users = [User(password: "test", email: "test@test.com", ownerOrBorrower: "Owner", firstName: "test", surName: "test", image: Image("otto"), bio:"", availability:[dayOfWeek(name: "Monday", isSelected: true)]),
              User(password: "aimee1", email: "aimee@gmail.com", ownerOrBorrower: "Borrower", firstName: "aimee", surName: "sullivan", image: Image("dizzy"), bio:"", availability:[dayOfWeek(name: "Monday", isSelected: true)])]

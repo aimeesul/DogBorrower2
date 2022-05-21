@@ -26,9 +26,9 @@ struct ContentView: View {
                         .padding(.all)
                         .scaledToFit()
                     
-                    TextField("Email", text: $email).textInputAutocapitalization(.never).disableAutocorrection(true)
+                    TextField("Email", text: $email).disableAutocorrection(true)//.textInputAutocapitalization(.never
                     
-                    SecureField("Password", text: $password).textInputAutocapitalization(.never).disableAutocorrection(true)
+                    SecureField("Password", text: $password).disableAutocorrection(true)//.textInputAutocapitalization(.never
                     
                     if (authenticationFail && authenticationPass==false) {
                         Text("Information not correct. Try again.")
@@ -36,7 +36,7 @@ struct ContentView: View {
                             .foregroundColor(.red)
                     }
                     
-                    NavigationLink(destination: TestView(), isActive: $authenticationPass){
+                    NavigationLink(destination: SwipingView(), isActive: $authenticationPass){
                         Button(action: {
                             for user in users {
                                 if self.email == user.email && self.password == user.password {

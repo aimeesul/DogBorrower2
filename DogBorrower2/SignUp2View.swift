@@ -21,7 +21,7 @@ struct SignUp2View: View {
                 ZStack {
                     
                     RoundedRectangle(cornerRadius: 25)
-                        .fill(.secondary) .onTapGesture {
+                        .fill() .onTapGesture {
                             showingImagePicker = true
                         }
                     
@@ -66,7 +66,7 @@ struct SignUp2View: View {
             Spacer()
             
             
-            NavigationLink(destination: TestView(), isActive: $pass){
+            NavigationLink(destination: SwipingView(), isActive: $pass){
                 Button(action: {
                     self.pass=true
                     someFunc(&currentUser)

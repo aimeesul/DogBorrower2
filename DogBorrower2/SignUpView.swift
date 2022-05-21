@@ -56,7 +56,7 @@ struct SignUpView: View {
                     }
                     
                 }
-                .textInputAutocapitalization(.never)
+                //.textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
                 
                 

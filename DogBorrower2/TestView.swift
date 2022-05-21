@@ -20,7 +20,7 @@ struct TestView: View {
                 ZStack {
 
                     RoundedRectangle(cornerRadius: 25)
-                        .fill(.secondary).onTapGesture {
+                        .fill().onTapGesture {
 
                             image = currentUser.image.renderingMode(.original)
 
