@@ -68,9 +68,9 @@ struct SignUpView: View {
     
     func someFunc() {
         // if self.pass {
-        let newUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName, image: Image("logo"), bio:"")
-        userEmail = newUser.email
-        users.append(newUser)
+        currentUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName, image: Image("logo"),bio: "")
+       // userEmail = newUser.email
+        users.append(currentUser)
         print(users)
         // }
     }

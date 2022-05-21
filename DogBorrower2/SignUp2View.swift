@@ -49,11 +49,10 @@ struct SignUp2View: View {
                                     if daysOfWeek[index].isSelected {
                                         Image(systemName: "checkmark.circle.fill")
                                             .foregroundColor(.green)
-                                            .animation(.easeIn)
+
                                     } else {
                                         Image(systemName: "circle")
                                             .foregroundColor(.primary)
-                                            .animation(.easeOut)
                                     }
                                     Text(daysOfWeek[index].name)
                                 }
@@ -70,17 +69,14 @@ struct SignUp2View: View {
             NavigationLink(destination: TestView(), isActive: $pass){
                 Button(action: {
                     self.pass=true
+                    someFunc(&currentUser)
                     
-                    for user in users {
-                        if user.email == userEmail {
-                            var user1=user
-                            someFunc(&user1)
-                            if let index = users.firstIndex(where: {$0 == user}) {
-                                users.remove(at: index)
-                            }
-                            users.append(user1)
-                        }
-                    }
+//                    for user in users {
+//                        if user.email == userEmail {
+//                            someFunc(&user)
+//
+//                        }
+//                    }
                     
                     print(users)
                     

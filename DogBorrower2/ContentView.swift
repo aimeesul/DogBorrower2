@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-var userEmail = ""
+var currentUser = User(password: "", email: "", ownerOrBorrower: "", firstName: "", surName: "", image: Image("logo"), bio: "")
 
 struct ContentView: View {
     
@@ -42,7 +42,7 @@ struct ContentView: View {
                                 if self.email == user.email && self.password == user.password {
                                     self.authenticationPass = true
                                     self.authenticationFail = false
-                                    userEmail = user.email
+                                    currentUser = user
                                     
                                 } else {
                                     self.authenticationFail = true
