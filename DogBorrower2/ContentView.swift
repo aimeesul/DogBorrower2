@@ -9,6 +9,8 @@ import SwiftUI
 
 var currentUser = User(password: "", email: "", ownerOrBorrower: "", firstName: "", surName: "", image: Image("logo"), bio: "")
 
+var u1 = User(password: "", email: "", ownerOrBorrower: "", firstName: "", surName: "", image: Image("logo"), bio: "")
+
 struct ContentView: View {
     
     @State var email: String = ""
@@ -52,6 +54,19 @@ struct ContentView: View {
                                     self.authenticationFail = true
                                 }
                             }
+                            
+                            if currentUser.ownerOrBorrower=="Dog Owner" {
+                                if let u2=users.first(where: {$0.ownerOrBorrower == "Dog Borrower"}) {
+                                    u1=u2
+                                }
+                            }
+                            
+                            if currentUser.ownerOrBorrower=="Dog Borrower" {
+                                if let u2=users.first(where: {$0.ownerOrBorrower == "Dog Owner"}) {
+                                    u1=u2
+                                }
+                            }
+                            
                         }) {
                             Text("LOGIN")
                                 .font(.headline)

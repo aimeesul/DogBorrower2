@@ -9,22 +9,58 @@ import SwiftUI
 import UIKit
 
 struct SwipingView: View {
+    @State var like = [User]()
+    
     var body: some View {
+        
         Form{
             VStack {
                 ZStack {
-                    currentUser.image .resizable()
+                    
+                    u1.image .resizable()
                         .padding(.all)
                         .scaledToFit()
                     
                 }
                 
                 HStack{
-                    Image("no")
+                    Button(action: {
+
+                        for user in users{
+                            if currentUser.ownerOrBorrower=="Dog Owner" && user.ownerOrBorrower=="Dog Borrower" {
+                                u1 = user
+                            }
+                            
+                            if currentUser.ownerOrBorrower=="Dog Borrower" && user.ownerOrBorrower=="Dog Owner" {
+                                u1 = user
+                            }
+                            print(u1)
+                            
+                        }}){
+                            Image("no")
+                            
+                        }
                     Spacer()
-                    Text(currentUser.firstName).font(.largeTitle)
+                    Text(u1.firstName).font(.largeTitle)
                     Spacer()
-                    Image("yes")
+                    Button(action: {
+                        for user in users{
+                            if currentUser.ownerOrBorrower=="Dog Owner" && user.ownerOrBorrower=="Dog Borrower" {
+                                u1 = user
+                                like.append(user)
+                            }
+                            
+                            if currentUser.ownerOrBorrower=="Dog Borrower" && user.ownerOrBorrower=="Dog Owner" {
+                                u1 = user
+                                like.append(user)
+                            }
+                            print(u1)
+                            currentUser.liked=like
+                            
+                        }}){
+                            Image("yes")
+                            
+                        }
                     
                 }
             }

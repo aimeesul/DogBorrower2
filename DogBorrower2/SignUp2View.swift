@@ -71,6 +71,19 @@ struct SignUp2View: View {
                     self.pass=true
                     someFunc(&currentUser)
                     
+                    if currentUser.ownerOrBorrower=="Dog Owner" {
+                        if let u2=users.first(where: {$0.ownerOrBorrower == "Dog Borrower"}) {
+                            u1=u2
+                        }
+                    }
+                    
+                    if currentUser.ownerOrBorrower=="Dog Borrower" {
+                        if let u2=users.first(where: {$0.ownerOrBorrower == "Dog Owner"}) {
+                            u1=u2
+                        }
+                    }
+                    
+                
 //                    for user in users {
 //                        if user.email == userEmail {
 //                            someFunc(&user)

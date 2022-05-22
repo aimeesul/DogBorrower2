@@ -2,7 +2,7 @@
 //  dayOfWeek.swift
 //  DogBorrower2
 //
-//  Created by Greg Martin on 21/05/2022.
+//  Created by Aimee Sullivan on 21/05/2022.
 //
 
 import Foundation
