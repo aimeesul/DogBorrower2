@@ -10,14 +10,14 @@ import UIKit
 
 struct SwipingView: View {
     @State var like = [User]()
-    
+    @State var u3 = u1
     var body: some View {
         
         Form{
             VStack {
                 ZStack {
                     
-                    u1.image .resizable()
+                    u3.image .resizable()
                         .padding(.all)
                         .scaledToFit()
                     
@@ -28,33 +28,33 @@ struct SwipingView: View {
 
                         for user in users{
                             if currentUser.ownerOrBorrower=="Dog Owner" && user.ownerOrBorrower=="Dog Borrower" {
-                                u1 = user
+                                u3 = user
                             }
                             
                             if currentUser.ownerOrBorrower=="Dog Borrower" && user.ownerOrBorrower=="Dog Owner" {
-                                u1 = user
+                                u3 = user
                             }
-                            print(u1)
+                            print(u3)
                             
                         }}){
                             Image("no")
                             
                         }
                     Spacer()
-                    Text(u1.firstName).font(.largeTitle)
+                    Text(u3.firstName).font(.largeTitle)
                     Spacer()
                     Button(action: {
                         for user in users{
                             if currentUser.ownerOrBorrower=="Dog Owner" && user.ownerOrBorrower=="Dog Borrower" {
-                                u1 = user
+                                u3 = user
                                 like.append(user)
                             }
                             
                             if currentUser.ownerOrBorrower=="Dog Borrower" && user.ownerOrBorrower=="Dog Owner" {
-                                u1 = user
+                                u3 = user
                                 like.append(user)
                             }
-                            print(u1)
+                            print(u3)
                             currentUser.liked=like
                             
                         }}){

@@ -16,6 +16,7 @@ struct SignUpView: View {
     @State private var selectedOwnerOrBorrower = "Dog Owner"
     @State private var bio: String = ""
     @State private var pass: Bool = false
+    @State private var daysOfWeek = [dayOfWeek(name:"Monday"),dayOfWeek(name: "Tuesday"),dayOfWeek(name: "Wednesday"),dayOfWeek(name: "Thursday"),dayOfWeek(name: "Friday"),dayOfWeek(name: "Saturday"),dayOfWeek(name: "Sunday")]
     
     var body: some View {
         
@@ -39,6 +40,32 @@ struct SignUpView: View {
                     
                     SecureField("Password", text: $password)
                     
+                    TextField("Bio", text: $bio)
+                    
+                    Spacer()
+                    
+                    Text("Which days are you available?:")
+                    List{
+                        ForEach(0..<daysOfWeek.count){ index in
+                            HStack {
+                                Button(action: {
+                                    daysOfWeek[index].isSelected = daysOfWeek[index].isSelected ? false : true
+                                }) {
+                                    HStack{
+                                        if daysOfWeek[index].isSelected {
+                                            Image(systemName: "checkmark.circle.fill")
+                                                .foregroundColor(.green)
+
+                                        } else {
+                                            Image(systemName: "circle")
+                                                .foregroundColor(.primary)
+                                        }
+                                        Text(daysOfWeek[index].name)
+                                    }
+                                }.buttonStyle(BorderlessButtonStyle())
+                            }
+                        }
+                    }
                 }
                 
                 NavigationLink(destination: SignUp2View(), isActive: $pass){
@@ -68,7 +95,15 @@ struct SignUpView: View {
     
     func someFunc() {
         // if self.pass {
-        currentUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName, image: Image("logo"),bio: "")
+        var avalibilty = [dayOfWeek]()
+        for day in daysOfWeek{
+            if day.isSelected {
+                avalibilty.append(day)
+            }
+        }
+        
+
+        currentUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName, image: Image("logo"),bio: self.bio, availability: avalibilty)
        // userEmail = newUser.email
         users.append(currentUser)
         print(users)

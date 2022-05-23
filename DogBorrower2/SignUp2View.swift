@@ -12,8 +12,7 @@ struct SignUp2View: View {
     @State private var inputImage: UIImage?
     @State private var image: Image?
     @State private var pass: Bool = false
-    @State private var bio = ""
-    @State private var daysOfWeek = [dayOfWeek(name:"Monday"),dayOfWeek(name: "Tuesday"),dayOfWeek(name: "Wednesday"),dayOfWeek(name: "Thursday"),dayOfWeek(name: "Friday"),dayOfWeek(name: "Saturday"),dayOfWeek(name: "Sunday")]
+    
     
     var body: some View {
         VStack {
@@ -34,32 +33,7 @@ struct SignUp2View: View {
                         .resizable()
                         .scaledToFit()
                 }
-                TextField("Bio", text: $bio)
-                
-                Spacer()
-                
-                Text("Which days are you available?:")
-                List{
-                    ForEach(0..<daysOfWeek.count){ index in
-                        HStack {
-                            Button(action: {
-                                daysOfWeek[index].isSelected = daysOfWeek[index].isSelected ? false : true
-                            }) {
-                                HStack{
-                                    if daysOfWeek[index].isSelected {
-                                        Image(systemName: "checkmark.circle.fill")
-                                            .foregroundColor(.green)
 
-                                    } else {
-                                        Image(systemName: "circle")
-                                            .foregroundColor(.primary)
-                                    }
-                                    Text(daysOfWeek[index].name)
-                                }
-                            }.buttonStyle(BorderlessButtonStyle())
-                        }
-                    }
-                }
             }
             
             
@@ -118,16 +92,9 @@ struct SignUp2View: View {
     
     func someFunc(_ user: inout User) {
         user.image = image ?? Image("logo")
-        user.bio = self.bio
+
         
-        var avalibilty = [dayOfWeek]()
-        for day in daysOfWeek{
-            if day.isSelected {
-                avalibilty.append(day)
-            }
-        }
         
-        user.availability = avalibilty
         // user.bio = self.bio
     }
     

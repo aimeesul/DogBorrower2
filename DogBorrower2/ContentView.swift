@@ -60,7 +60,7 @@ struct ContentView: View {
                                     u1=u2
                                 }
                             }
-                            
+
                             if currentUser.ownerOrBorrower=="Dog Borrower" {
                                 if let u2=users.first(where: {$0.ownerOrBorrower == "Dog Owner"}) {
                                     u1=u2
