@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-var currentUser = User(password: "", email: "", ownerOrBorrower: "", firstName: "", surName: "", image: Image("logo"), bio: "")
+var currentUser = User(password: "", email: "", ownerOrBorrower: "", firstName: "", surName: "", image: Image("logo"), bio: "", liked: [])
 
-var u1 = User(password: "", email: "", ownerOrBorrower: "", firstName: "", surName: "", image: Image("logo"), bio: "")
+//var ind1 = 0
 
 struct ContentView: View {
     
@@ -44,7 +44,7 @@ struct ContentView: View {
                     
                     NavigationLink(destination: SwipingView(), isActive: $authenticationPass){
                         Button(action: {
-                            for user in users {
+                            for user in dogOwners {
                                 if self.email == user.email && self.password == user.password {
                                     self.authenticationPass = true
                                     self.authenticationFail = false
@@ -55,17 +55,28 @@ struct ContentView: View {
                                 }
                             }
                             
-                            if currentUser.ownerOrBorrower=="Dog Owner" {
-                                if let u2=users.first(where: {$0.ownerOrBorrower == "Dog Borrower"}) {
-                                    u1=u2
+                            for user in dogBorrowers {
+                                if self.email == user.email && self.password == user.password {
+                                    self.authenticationPass = true
+                                    self.authenticationFail = false
+                                    currentUser = user
+                                    
+                                } else {
+                                    self.authenticationFail = true
                                 }
                             }
-
-                            if currentUser.ownerOrBorrower=="Dog Borrower" {
-                                if let u2=users.first(where: {$0.ownerOrBorrower == "Dog Owner"}) {
-                                    u1=u2
-                                }
-                            }
+                            
+//                            if currentUser.ownerOrBorrower=="Dog Owner" {
+//                                if let ind2=users.firstIndex(where: {$0.ownerOrBorrower == "Dog Borrower"}) {
+//                                    ind1=ind2
+//                                }
+//                            }
+//
+//                            if currentUser.ownerOrBorrower=="Dog Borrower" {
+//                                if let ind2=users.firstIndex(where: {$0.ownerOrBorrower == "Dog Owner"}) {
+//                                    ind1=ind2
+//                                }
+//                            }
                             
                         }) {
                             Text("LOGIN")

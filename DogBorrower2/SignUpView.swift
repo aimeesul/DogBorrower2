@@ -103,10 +103,14 @@ struct SignUpView: View {
         }
         
 
-        currentUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName, image: Image("logo"),bio: self.bio, availability: avalibilty)
+        currentUser = User(password: self.password, email: self.email, ownerOrBorrower: self.selectedOwnerOrBorrower, firstName: self.firstName, surName: self.surName, image: Image("logo"),bio: self.bio, availability: avalibilty, liked: [])
        // userEmail = newUser.email
-        users.append(currentUser)
-        print(users)
+        if (currentUser.ownerOrBorrower=="Dog Owner") {
+            dogOwners.append(currentUser)
+        } else {
+            dogBorrowers.append(currentUser)
+        }
+        //print(users)
         // }
     }
     
