@@ -4,6 +4,7 @@
 //
 //  Created by Aimee Sullivan on 08/04/2022.
 //
+// Some of the code in this file was sourced from https://developer.apple.com/forums/thread/651254 and edited to be relevent to this project
 
 import SwiftUI
 
