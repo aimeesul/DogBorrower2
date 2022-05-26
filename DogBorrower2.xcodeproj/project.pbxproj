@@ -11,7 +11,6 @@
 		8203C64028367AFF00CB53E9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8203C63F28367AFF00CB53E9 /* ImagePicker.swift */; };
 		82B089752839299600F10865 /* dayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B089742839299600F10865 /* dayOfWeek.swift */; };
 		82B0897728394B8100F10865 /* SwipingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0897628394B8100F10865 /* SwipingView.swift */; };
-		C23C3AC8281C346C0039E3C4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C3AC7281C346C0039E3C4 /* TestView.swift */; };
 		C2ADB77A281813C300CE9B57 /* DogBorrower2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB779281813C300CE9B57 /* DogBorrower2App.swift */; };
 		C2ADB77C281813C300CE9B57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB77B281813C300CE9B57 /* ContentView.swift */; };
 		C2ADB77E281813C600CE9B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2ADB77D281813C600CE9B57 /* Assets.xcassets */; };
@@ -45,7 +44,6 @@
 		8203C63F28367AFF00CB53E9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		82B089742839299600F10865 /* dayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayOfWeek.swift; sourceTree = "<group>"; };
 		82B0897628394B8100F10865 /* SwipingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingView.swift; sourceTree = "<group>"; tabWidth = 4; };
-		C23C3AC7281C346C0039E3C4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		C2ADB776281813C300CE9B57 /* DogBorrower2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogBorrower2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2ADB779281813C300CE9B57 /* DogBorrower2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBorrower2App.swift; sourceTree = "<group>"; };
 		C2ADB77B281813C300CE9B57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				82B089742839299600F10865 /* dayOfWeek.swift */,
 				8203C63F28367AFF00CB53E9 /* ImagePicker.swift */,
 				C2ADB77B281813C300CE9B57 /* ContentView.swift */,
-				C23C3AC7281C346C0039E3C4 /* TestView.swift */,
 				C2ADB7A3281814ED00CE9B57 /* User.swift */,
 				82B0897628394B8100F10865 /* SwipingView.swift */,
 				C2ADB77D281813C600CE9B57 /* Assets.xcassets */,
@@ -280,7 +277,6 @@
 			files = (
 				C2ADB7A62818152700CE9B57 /* SignUpView.swift in Sources */,
 				82B089752839299600F10865 /* dayOfWeek.swift in Sources */,
-				C23C3AC8281C346C0039E3C4 /* TestView.swift in Sources */,
 				C2ADB77C281813C300CE9B57 /* ContentView.swift in Sources */,
 				8203C64028367AFF00CB53E9 /* ImagePicker.swift in Sources */,
 				82B0897728394B8100F10865 /* SwipingView.swift in Sources */,
